@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Event Details</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="Events">Events</string>
+    <string name="myEvents">My Events</string>
+    <string name="Achievements">Achievements</string>
+    <string name="profile">Profile</string>
+    <string name="event_title">Extra Life Charity Helper</string>
+    <string name="slot">"Slot : "</string>
+    <string name="Share">Share</string>
+</resources>
