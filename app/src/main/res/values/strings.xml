@@ -15,4 +15,17 @@
     <string name="Register">Register Now</string>
     <string name="title_hint">Input Event Title</string>
     <string name="Save">Save</string>
+    <string name="tagline">Extending a helping hand to whomever and whoever, wherever there is a need for such.</string>
+    <string name="volunteerText">Browse and sign up for activities you are interested in.</string>
+    <string name="organizerText">Get help on tasks from your trusted community.</string>
+    <string name="volunteerTitle">Be a volunteer</string>
+    <string name="organizerTitle">Organize an event</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="enterUsername">Enter Username</string>
+    <string name="forgotPW">Forgot password?</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
 </resources>
