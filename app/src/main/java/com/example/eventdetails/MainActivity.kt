@@ -3,6 +3,8 @@ package com.example.eventdetails
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -22,6 +24,16 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_home, R.id.navigation_events, R.id.navigation_myevents, R.id.navigation_achievements, R.id.navigation_profile))
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+
+    }
+
+    fun AppCompatActivity.replaceFragment(fragment: Fragment){
+        val fragmentManager = supportFragmentManager
+        val transaction = fragmentManager.beginTransaction()
+        transaction.replace(R.id.nav_host_fragment,fragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
     }
 
 
