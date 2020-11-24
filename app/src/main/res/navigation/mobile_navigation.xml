@@ -12,12 +12,6 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_events"
-        android:name="com.example.eventdetails.ui.EventDetails.EventDetailsFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_eventdetails" />
-
-    <fragment
         android:id="@+id/navigation_myevents"
         android:name="com.example.eventdetails.ui.MyEvents.MyEventsFragment"
         android:label="@string/title_notifications"
@@ -33,4 +27,10 @@
         android:name="com.example.eventdetails.ui.EventDetails.EditEventsFragment"
         android:label="edit_events_fragment"
         tools:layout="@layout/edit_events_fragment" />
+
+    <fragment
+        android:id="@+id/navigation_eventMain"
+        android:name="com.example.eventdetails.ui.Events.EventMain"
+        android:label="Events"
+        tools:layout="@layout/fragment_event_main" />
 </navigation>

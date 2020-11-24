@@ -113,7 +113,7 @@ class EditEventsFragment : Fragment() {
             textViewTime.text = editTextTime.text
             textViewLocation.text = editTextLocation.text
             textViewDesc.text = editTextDesc.text
-            requireView().findNavController().navigate(R.id.navigation_events)
+            //requireView().findNavController().navigate(R.id.navigation_events)
         }
         return root
     }
