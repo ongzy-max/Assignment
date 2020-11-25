@@ -10,6 +10,11 @@
     <string name="event_title">Extra Life Charity Helper</string>
     <string name="slot">"Slot : "</string>
     <string name="Share">Share</string>
+    <string name="QRText">Generate QR Code</string>
+    <string name="Complete">Complete</string>
+    <string name="Register">Register Now</string>
+    <string name="title_hint">Input Event Title</string>
+    <string name="Save">Save</string>
     <string name="tagline">Extending a helping hand to whomever and whoever, wherever there is a need for such.</string>
     <string name="volunteerText">Browse and sign up for activities you are interested in.</string>
     <string name="organizerText">Get help on tasks from your trusted community.</string>
