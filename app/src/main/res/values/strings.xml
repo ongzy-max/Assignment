@@ -53,4 +53,6 @@
     <string name="contact">Contact Number</string>
     <string name="email">Email address</string>
     <string name="editProfile">Edit Profile</string>
+    <string name="signout">Sign out</string>
+    <string name="done">Done</string>
 </resources>

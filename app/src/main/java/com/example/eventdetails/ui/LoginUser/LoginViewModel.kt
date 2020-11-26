@@ -1,4 +1,4 @@
-package com.example.eventdetails
+package com.example.eventdetails.ui.LoginUser
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

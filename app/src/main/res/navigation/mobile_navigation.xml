@@ -33,4 +33,67 @@
         android:name="com.example.eventdetails.ui.Events.EventMain"
         android:label="Events"
         tools:layout="@layout/fragment_event_main" />
+
+
+    <fragment
+        android:id="@+id/navigation_register"
+        android:name="com.example.eventdetails.ui.LoginUser.Register"
+        android:label="Register"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_register_to_registerInput"
+            app:destination="@id/navigation_registerInput" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_editProfile"
+        android:name="com.example.eventdetails.ui.LoginUser.EditProfileFragment"
+        android:label="Edit Profile"
+        tools:layout="@layout/fragment_edit_profile" />
+
+    <fragment
+        android:id="@+id/navigation_login"
+        android:name="com.example.eventdetails.ui.LoginUser.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_register"
+            app:destination="@id/navigation_register" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_forgotPW"
+        android:name="com.example.eventdetails.ui.LoginUser.ForgotPWFragment"
+        android:label="ForgotPWFragment"
+        tools:layout="@layout/fragment_forgotpw"/>
+    <fragment
+        android:id="@+id/navigation_profilePic"
+        android:name="com.example.eventdetails.ui.LoginUser.ProfilePicFragment"
+        android:label="Register"
+        tools:layout="@layout/fragment_profilepic" />
+    <fragment
+        android:id="@+id/navigation_registerInput2"
+        android:name="com.example.eventdetails.ui.LoginUser.RegisterInput2"
+        android:label="Register"
+        tools:layout="@layout/fragment_registerinput2">
+        <action
+            android:id="@+id/action_registerInput2_to_profilePicFragment"
+            app:destination="@id/navigation_profilePic" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_registerInput"
+        android:name="com.example.eventdetails.ui.LoginUser.RegisterInput"
+        android:label="Register"
+        tools:layout="@layout/fragment_registerinput">
+        <action
+            android:id="@+id/action_registerInput_to_registerInput2"
+            app:destination="@id/navigation_registerInput2" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.eventdetails.ui.LoginUser.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+
 </navigation>
