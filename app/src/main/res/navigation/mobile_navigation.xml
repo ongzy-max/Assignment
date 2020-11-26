@@ -33,4 +33,9 @@
         android:name="com.example.eventdetails.ui.Events.EventMain"
         android:label="Events"
         tools:layout="@layout/fragment_event_main" />
+    <fragment
+        android:id="@+id/fragment_create_event"
+        android:name="com.example.eventdetails.ui.CreateEvent.CreateEvent"
+        android:label="Create Event"
+        tools:layout="@layout/fragment_create_event" />
 </navigation>

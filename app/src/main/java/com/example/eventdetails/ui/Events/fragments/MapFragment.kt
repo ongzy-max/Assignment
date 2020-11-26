@@ -68,6 +68,7 @@ class MapFragment : Fragment(), OnMapReadyCallback {
                 .title("Setapak")
                 .snippet("EventTitle: Date")
         )
+        setapak.showInfoWindow()
 
         val kuching = googleMap.addMarker(
             MarkerOptions()
