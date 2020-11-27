@@ -12,7 +12,7 @@ import com.example.eventdetails.R
 
 class LoginFragment : Fragment() {
 
-    private lateinit var myEventsViewModel: MyEventsViewModel
+    /*private lateinit var myEventsViewModel: MyEventsViewModel*/
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -20,13 +20,13 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         setHasOptionsMenu(false);
-        myEventsViewModel =
-            ViewModelProvider(this).get(MyEventsViewModel::class.java)
+        /*myEventsViewModel =
+            ViewModelProvider(this).get(MyEventsViewModel::class.java)*/
         val root = inflater.inflate(R.layout.fragment_login, container, false)
-        val textView: TextView = root.findViewById(R.id.text_notifications)
+        /*val textView: TextView = root.findViewById(R.id.text_notifications)
         myEventsViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
-        })
+        })*/
         return root
     }
 }

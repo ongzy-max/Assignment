@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/navigation_myevents"
-        android:name="com.example.eventdetails.ui.MyEvents.MyEventsFragment"
+        android:name="com.example.eventdetails.ui.MyEvents.MyEventMain"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_myevents" />
 
@@ -33,4 +33,19 @@
         android:name="com.example.eventdetails.ui.Events.EventMain"
         android:label="Events"
         tools:layout="@layout/fragment_event_main" />
+    <fragment
+        android:id="@+id/navigation_QRCode"
+        android:name="com.example.eventdetails.ui.EventDetails.QRCodeFragment"
+        android:label="q_r_code_fragment"
+        tools:layout="@layout/q_r_code_fragment" />
+    <fragment
+        android:id="@+id/navigation_eventDetails"
+        android:name="com.example.eventdetails.ui.EventDetails.EventDetailsFragment"
+        android:label="fragment_eventdetails"
+        tools:layout="@layout/fragment_eventdetails" />
+    <fragment
+        android:id="@+id/organiserEventsFragment"
+        android:name="com.example.eventdetails.ui.EventDetails.OrganiserEventsFragment"
+        android:label="organiser_events_fragment"
+        tools:layout="@layout/organiser_events_fragment" />
 </navigation>
