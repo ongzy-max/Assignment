@@ -48,4 +48,9 @@
         android:name="com.example.eventdetails.ui.EventDetails.OrganiserEventsFragment"
         android:label="organiser_events_fragment"
         tools:layout="@layout/organiser_events_fragment" />
+    <fragment
+        android:id="@+id/fragment_create_event"
+        android:name="com.example.eventdetails.ui.CreateEvent.CreateEvent"
+        android:label="Create Event"
+        tools:layout="@layout/fragment_create_event" />
 </navigation>
