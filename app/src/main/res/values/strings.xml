@@ -25,7 +25,7 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="enterUsername">Enter Username</string>
-    <string name="forgotPW">Forgot password?</string>
+    <string name="forgotPW"><u><i>Forgot password?</i></u></string>
     <string name="login">Login</string>
     <string name="register">Register</string>
     <string name="noAccount">Don\'t have an account?</string>
@@ -37,7 +37,7 @@
     <string name="sendEmail">Send email</string>
     <string name="continueFacebook">Continue with Facebook</string>
     <string name="or">Or</string>
-    <string name="registerEmail">Register with Email Address</string>
+    <string name="registerEmail">Register with Google</string>
     <string name="haveAccount">Already have an account?</string>
     <string name="enterCode">Enter confirmation code</string>
     <string name="codeText">Enter the confirmation code that we sent to your email. Resend code.</string>

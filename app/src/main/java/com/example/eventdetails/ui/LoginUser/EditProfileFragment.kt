@@ -9,25 +9,26 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.lifecycle.observe
 import androidx.navigation.findNavController
 import com.example.eventdetails.R
+import com.google.firebase.database.FirebaseDatabase
 
 
 class EditProfileFragment : Fragment() {
-
+    private var db = FirebaseDatabase.getInstance().reference
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         setHasOptionsMenu(false);
+
         val root = inflater.inflate(R.layout.fragment_edit_profile, container, false)
         val root2 = inflater.inflate(R.layout.fragment_profile, container, false)
 
-        val model= ViewModelProviders.of(requireActivity()).get(EditProfileViewModel::class.java)
+        val model= ViewModelProviders.of(requireActivity()).get(Communicator2::class.java)
 
         val textViewName : TextView = root2.findViewById(R.id.textViewName)
         val textViewBirthday : TextView = root2.findViewById(R.id.textViewBirthday)
@@ -35,16 +36,9 @@ class EditProfileFragment : Fragment() {
         val textViewEmail : TextView = root2.findViewById(R.id.textViewEmail)
 
         val editTextName: EditText = root.findViewById(R.id.editTextName)
-        //editTextName.setText(editProfileViewModel.name)
-
         val editTextBirthday: EditText = root.findViewById(R.id.editTextBirthday)
-        //editTextBirthday.setText(editProfileViewModel.birthday)
-
         val editTextPhone: EditText = root.findViewById(R.id.editTextPhone)
-        //editTextPhone.setText(editProfileViewModel.contact)
-
         val editTextProfileEmail: EditText = root.findViewById(R.id.editTextProfileEmail)
-        //editTextProfileEmail.setText(editProfileViewModel.email)
 
         model.name.observe(viewLifecycleOwner,
                 { o -> editTextName.setText(o!!.toString()) })
@@ -61,13 +55,15 @@ class EditProfileFragment : Fragment() {
         val buttonEditProfileDone : Button = root.findViewById(R.id.buttonEditProfileDone)
 
         buttonEditProfileDone.setOnClickListener {
-            Toast.makeText(getActivity(), "Profile saved!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(getActivity(), "Changes saved!", Toast.LENGTH_SHORT).show()
             model!!.setMsgCommunicator(editTextName.text.toString(),editTextBirthday.text.toString(),editTextPhone.text.toString(),editTextProfileEmail.text.toString())
 
             textViewName.text = editTextName.text
             textViewBirthday.text = editTextBirthday.text
             textViewContact.text = editTextPhone.text
             textViewEmail.text = editTextProfileEmail.text
+
+            //db.setValue(editTextName.text)
 
             requireView().findNavController().navigate(R.id.navigation_profile)
         }

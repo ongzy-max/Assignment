@@ -13,6 +13,7 @@ import androidx.navigation.findNavController
 import com.example.eventdetails.R
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import com.example.eventdetails.R.id.navigation_eventMain
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
@@ -23,10 +24,15 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        requireView().findViewById<Button>(R.id.buttonVolunteer).setOnClickListener {
-            findNavController().navigate(R.id.navigation_eventMain)
+        val root = inflater.inflate(R.layout.fragment_home, container, false)
+        val buttonVolunteer : Button = root.findViewById(R.id.buttonVolunteer)
+        buttonVolunteer.setOnClickListener {
+            findNavController().navigate(navigation_eventMain)
         }
-        return inflater.inflate(R.layout.fragment_home, container, false)
+/*        requireView().findViewById<Button>(R.id.buttonOrganize).setOnClickListener {
+            requireView().findNavController().navigate(R.id.fragment_create_event)
+        }*/
+        return root
     }
 
 }

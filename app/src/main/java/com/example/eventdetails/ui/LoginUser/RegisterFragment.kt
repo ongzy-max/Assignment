@@ -23,7 +23,12 @@ class Register : Fragment() {
         val root = inflater.inflate(R.layout.fragment_register, container, false)
         val buttonRegisterEmail : Button = root.findViewById(R.id.buttonRegisterEmail)
         buttonRegisterEmail.setOnClickListener {
-            requireView().findNavController().navigate(R.id.navigation_registerInput)
+            requireView().findNavController().navigate(R.id.navigation_registerInput2)
+        }
+
+        val buttonGoLogin : TextView = root.findViewById(R.id.buttonGoLogin)
+        buttonGoLogin.setOnClickListener {
+            requireView().findNavController().navigate(R.id.navigation_login)
         }
         return root
     }

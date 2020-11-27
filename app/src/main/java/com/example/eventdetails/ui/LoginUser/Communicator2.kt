@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import java.util.*
 
-class EditProfileViewModel : ViewModel(){
+class Communicator2 : ViewModel(){
     val name = MutableLiveData<Any>()
     val birthday = MutableLiveData<Any>()
     val contact = MutableLiveData<Any>()
@@ -15,6 +15,10 @@ class EditProfileViewModel : ViewModel(){
         birthday.value = msg2
         contact.value = msg3
         email.value = msg4
+    }
+
+    fun setEmailCommunicator(msg1:String){
+        email.value = msg1
     }
 }
 

@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -23,9 +24,17 @@ class RegisterInput : Fragment() {
         setHasOptionsMenu(false);
         val root = inflater.inflate(R.layout.fragment_registerinput, container, false)
         val buttonCodeNext : Button = root.findViewById(R.id.buttonCodeNext)
+        val editTextCCode: TextView = root.findViewById(R.id.editTextCCode)
         buttonCodeNext.setOnClickListener {
-            requireView().findNavController().navigate(R.id.navigation_registerInput2)
+            if(editTextCCode.text.trim().isEmpty())
+                Toast.makeText(getActivity(), "Input Required", Toast.LENGTH_SHORT).show()
+            else{
+                requireView().findNavController().navigate(R.id.navigation_registerInput2)
+            }
+
         }
+
+
         return root
     }
 }

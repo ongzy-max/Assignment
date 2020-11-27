@@ -95,5 +95,10 @@
         android:name="com.example.eventdetails.ui.LoginUser.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/createEvent"
+        android:name="com.example.eventdetails.ui.CreateEvent.CreateEvent"
+        android:label="fragment_create_event"
+        tools:layout="@layout/fragment_create_event" />
 
 </navigation>
