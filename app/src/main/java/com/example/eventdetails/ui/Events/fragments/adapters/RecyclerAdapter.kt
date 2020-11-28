@@ -1,48 +1,64 @@
 package com.android.example.eventactivity.fragments.adapters
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.eventdetails.R
+import com.example.eventdetails.ui.EventDetails.Communicator
+import com.example.eventdetails.ui.Firebase.EventRead
 
-class RecyclerAdapter(private var eventTitle: List<String>, private var eventDate: List<String>,
-                      private var eventDuration: List<String>, private var eventLocation: List<String>,
-                      private var eventContact: List<String>) :
-        RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
+class RecyclerAdapter(val context: Context, val eventList: ArrayList<EventRead>) :
+        RecyclerView.Adapter<RecyclerAdapter.ViewHolder>(){
 
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class ViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView!!) {
 
-        val itemTitle: TextView = itemView.findViewById(R.id.textView10)
-        val itemDate: TextView = itemView.findViewById(R.id.textView6)
-        val itemDuration: TextView = itemView.findViewById(R.id.textView7)
-        val itemLocation: TextView = itemView.findViewById(R.id.textView8)
-        val itemContact: TextView = itemView.findViewById(R.id.textView9)
+        val itemTitle = itemView?.findViewById<TextView>(R.id.textView10)
+        val itemDate = itemView?.findViewById<TextView>(R.id.textView6)
+        val itemDuration = itemView?.findViewById<TextView>(R.id.textView7)
+        val itemLocation = itemView?.findViewById<TextView>(R.id.textView8)
+        val itemContact = itemView?.findViewById<TextView>(R.id.textView9)
+
+        lateinit var itemID: String
+        lateinit var communicater: Communicator
 
         init {
-            itemView.setOnClickListener {
+            itemView?.setOnClickListener {
                 val position: Int = adapterPosition
-                Toast.makeText(itemView.context, "You click on item # ${position + 1}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(itemView?.context, "You click on item # ${position + 1}, $itemID", Toast.LENGTH_SHORT).show()
+                //communicater.passID(itemID)
+                //requireView().findNavController().navigate(R.id.navigation_eventDetails)
             }
+        }
+
+        fun bind(event: EventRead, context: Context){
+            itemTitle?.text = event.eventTitle
+            itemDate?.text = event.eventDate
+            itemDuration?.text = event.eventDuration.toString()
+            itemLocation?.text = event.eventLocation
+            itemContact?.text = event.eventContact
+            itemID = event.eventID.toString()
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.recycle_list, parent, false)
-        return ViewHolder(v)
+        val view = LayoutInflater.from(context).inflate(R.layout.recycle_list, parent, false)
+        return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.itemTitle.text = eventTitle[position]
-        holder.itemDate.text = eventDate[position]
-        holder.itemDuration.text = eventDuration[position]
-        holder.itemLocation.text = eventLocation[position]
-        holder.itemContact.text = eventContact[position]
+        holder?.bind(eventList[position], context)
+
     }
 
     override fun getItemCount(): Int {
-        return eventTitle.size
+        return eventList.size
     }
+
 }
+

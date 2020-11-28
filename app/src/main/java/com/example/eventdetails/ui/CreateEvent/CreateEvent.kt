@@ -6,12 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
 import androidx.navigation.findNavController
 import com.example.eventdetails.R
-import com.example.eventdetails.ui.Firebase.Events
-import com.google.android.material.textfield.TextInputEditText
+import com.example.eventdetails.ui.Firebase.EventWrite
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.database.FirebaseDatabase
 
@@ -76,7 +74,7 @@ class CreateEvent : Fragment() {
         val ref = FirebaseDatabase.getInstance().getReference("Events")
         val eventID = ref.push().key
 
-        val events = Events(eventID.toString(), eventTitle, eventDate, eventTime.toInt(), eventDuration, eventLocation,
+        val events = EventWrite(eventID.toString(), eventTitle, eventDate, eventTime, eventDuration.toInt(), eventLocation,
                 eventContact, eventDescription, eventWhatsapp, eventSlot.toInt(), eventRegister)
 
         ref.child(eventID.toString()).setValue(events).addOnCompleteListener{
