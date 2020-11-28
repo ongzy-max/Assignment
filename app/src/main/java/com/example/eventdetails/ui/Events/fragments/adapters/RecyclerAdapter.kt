@@ -25,14 +25,14 @@ class RecyclerAdapter(val context: Context, val eventList: ArrayList<EventRead>)
         val itemContact = itemView?.findViewById<TextView>(R.id.textView9)
 
         lateinit var itemID: String
-        lateinit var communicater: Communicator
 
         init {
             itemView?.setOnClickListener {
                 val position: Int = adapterPosition
                 Toast.makeText(itemView?.context, "You click on item # ${position + 1}, $itemID", Toast.LENGTH_SHORT).show()
-                //communicater.passID(itemID)
-                //requireView().findNavController().navigate(R.id.navigation_eventDetails)
+                val communicater = Communicator()
+                communicater.passID(itemID)
+                itemView?.findNavController().navigate(R.id.navigation_eventDetails)
             }
         }
 

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.findNavController
 import com.example.eventdetails.R
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -93,6 +94,7 @@ class MapFragment : Fragment(), OnMapReadyCallback {
                 var event = p0.title
                 //Intent
                 Toast.makeText(requireActivity(), "You clicked on $event", Toast.LENGTH_SHORT).show()
+                requireView().findNavController().navigate(R.id.navigation_eventDetails)
             }
             })
 
