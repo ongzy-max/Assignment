@@ -1,17 +1,20 @@
 package com.android.example.eventactivity.fragments.adapters
 
 import android.content.Context
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.eventdetails.R
 import com.example.eventdetails.ui.EventDetails.Communicator
+import com.example.eventdetails.ui.EventDetails.EventDetailsFragment
 import com.example.eventdetails.ui.Firebase.EventRead
+
 
 class RecyclerAdapter(val context: Context, val eventList: ArrayList<EventRead>) :
         RecyclerView.Adapter<RecyclerAdapter.ViewHolder>(){
@@ -33,6 +36,17 @@ class RecyclerAdapter(val context: Context, val eventList: ArrayList<EventRead>)
                 val communicater = Communicator()
                 communicater.passID(itemID)
                 itemView?.findNavController().navigate(R.id.navigation_eventDetails)
+
+//                val ldf = EventDetailsFragment()
+//                val args = Bundle()
+//                args.putString("YourKey", "$itemID")
+//                ldf.setArguments(args)
+//
+//                getFragmentManager().beginTransaction().add(R.id.recycleList, ldf).commit()
+                val f: Fragment = EventDetailsFragment()
+                val args = Bundle()
+                args.putExtra("EventID", itemID)
+                f.arguments = args
             }
         }
 
@@ -59,6 +73,10 @@ class RecyclerAdapter(val context: Context, val eventList: ArrayList<EventRead>)
     override fun getItemCount(): Int {
         return eventList.size
     }
+
+}
+
+private fun Bundle.putExtra(s: String, itemID: String) {
 
 }
 

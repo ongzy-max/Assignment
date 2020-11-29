@@ -11,7 +11,7 @@ import com.google.zxing.BarcodeFormat
 import com.google.zxing.MultiFormatWriter
 import com.google.zxing.WriterException
 
-class Communicator : ViewModel(){
+open class Communicator : ViewModel(){
 
 
     val title = MutableLiveData<Any>()

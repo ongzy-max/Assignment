@@ -7,6 +7,7 @@ import android.view.*
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -55,6 +56,7 @@ class EventDetailsFragment : Fragment(), View.OnClickListener {
         val textViewLocation:TextView = root.findViewById(R.id.textViewLocation)
         val textViewPhoneNum:TextView = root.findViewById(R.id.textViewPhoneNum)
         val textViewDesc:TextView = root.findViewById(R.id.textViewDesc)
+
 
         val model= ViewModelProviders.of(requireActivity()).get(Communicator::class.java)
 
