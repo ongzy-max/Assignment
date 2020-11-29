@@ -8,11 +8,10 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.observe
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import com.example.eventdetails.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -34,10 +33,10 @@ class ProfileFragment : Fragment() {
         val root = inflater.inflate(R.layout.fragment_profile, container, false)
         val buttonEditProfile : Button = root.findViewById(R.id.buttonEditProfile)
         val buttonSignout : Button = root.findViewById(R.id.buttonSignout)
-        val textViewEmail:TextView = root.findViewById(R.id.textViewEmail)
         val textViewName: TextView = root.findViewById(R.id.textViewName)
-        val textViewBirthday: TextView = root.findViewById(R.id.textViewBirthday)
-        val textViewContact: TextView = root.findViewById(R.id.textViewContact)
+        val textViewBirthday:TextView = root.findViewById(R.id.textViewBirthday)
+        val textViewContact:TextView = root.findViewById(R.id.textViewContact)
+        val textViewEmail:TextView = root.findViewById(R.id.textViewEmail)
 
         buttonEditProfile.setOnClickListener {
             requireView().findNavController().navigate(R.id.navigation_editProfile)
@@ -46,45 +45,34 @@ class ProfileFragment : Fragment() {
         buttonSignout.setOnClickListener{
             auth.signOut()
             Toast.makeText(getActivity(), "User signed out", Toast.LENGTH_SHORT).show()
-            requireParentFragment().findNavController().navigate(R.id.navigation_login)
+            requireView().findNavController().navigate(R.id.navigation_login)
         }
 
         val user = auth.currentUser
         if (user != null) {
-            var userID = auth.getCurrentUser()?.uid
+            val model= ViewModelProviders.of(requireActivity()).get(Communicator2::class.java)
 
-            db.child("User").child("$userID").addValueEventListener(object :
+            model.email.observe(viewLifecycleOwner,
+                { o -> textViewEmail.setText(o!!.toString()) })
+
+            //var email = model.email.toString()
+            //textViewEmail.text = email
+
+            /*db.child("User").child(email).addValueEventListener(object :
                 ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
-                    val model= ViewModelProviders.of(requireActivity()).get(Communicator2::class.java)
+                    val textViewName: TextView = root.findViewById(R.id.textViewName)
+                    val textViewBirthday: TextView = root.findViewById(R.id.textViewBirthday)
+                    val textViewContact: TextView = root.findViewById(R.id.textViewContact)
 
-                    val name = dataSnapshot.child("name").getValue(String::class.java)
-                    val birthday = dataSnapshot.child("birthday").getValue(String::class.java)
-                    val contact = dataSnapshot.child("contact").getValue(String::class.java)
-                    val email = dataSnapshot.child("email").getValue(String::class.java)
 
-                    //User(name.toString(), birthday.toString(), contact.toString(), email.toString())
-                    //var user = User()
+                    val name = dataSnapshot.child("Name").getValue(String::class.java)
+                    val birthday = dataSnapshot.child("Birthday").getValue(String::class.java)
+                    val contact = dataSnapshot.child("Contact").getValue(String::class.java)
 
                     textViewName.text = name
-                    Log.w("1", "$name")
                     textViewBirthday.text = birthday
                     textViewContact.text = contact
-                    textViewEmail.text = email
-/*
-                    model.name.observe(viewLifecycleOwner,
-                        { o -> textViewName.setText(o!!.toString()) })
-
-                    model.birthday.observe(viewLifecycleOwner,
-                        { o -> textViewBirthday.setText(o!!.toString())  })
-
-                    model.contact.observe(viewLifecycleOwner,
-                        { o -> textViewContact.setText(o!!.toString()) })
-
-                    model.email.observe(viewLifecycleOwner,
-                        { o -> textViewEmail.setText(o!!.toString()) })*/
-
-                    model!!.setMsgCommunicator(textViewName.text.toString(),textViewBirthday.text.toString(),textViewContact.text.toString(),textViewEmail.text.toString())
 
                     Log.d("Get data", "Get value")
                 }
@@ -92,18 +80,10 @@ class ProfileFragment : Fragment() {
                 override fun onCancelled(error: DatabaseError) {
                     Log.w("Get data", "Failed to read value.", error.toException())
                 }
-            })
+            })*/
         }
-
-
         setHasOptionsMenu(true)
         return root
-    }
-
-    fun signOutt(){
-        auth.signOut()
-        Toast.makeText(getActivity(), "User signed out", Toast.LENGTH_SHORT).show()
-        requireView().findNavController().navigate(R.id.navigation_login)
     }
     override fun onStart() {
         super.onStart()

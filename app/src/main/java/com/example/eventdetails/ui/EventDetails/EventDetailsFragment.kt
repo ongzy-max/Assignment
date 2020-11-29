@@ -2,9 +2,7 @@ package com.example.eventdetails.ui.EventDetails
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.*
-import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.fragment.app.Fragment
@@ -43,7 +41,6 @@ class EventDetailsFragment : Fragment(), View.OnClickListener {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        Log.i("Event Details Fragment","Created")
 
         setHasOptionsMenu(true);
         eventDetailsViewModel =
@@ -78,7 +75,7 @@ class EventDetailsFragment : Fragment(), View.OnClickListener {
 
         val imageButtonEditText:ImageButton = root.findViewById(R.id.imageButtonEditText)
 
-        //model.passID("1234")
+
 
         imageButtonEditText.setOnClickListener {
 
@@ -91,15 +88,6 @@ class EventDetailsFragment : Fragment(), View.OnClickListener {
             }
             fragmentTransaction.commit()*/
         }
-
-        val buttonQR: Button = root.findViewById(R.id.buttonQR)
-
-        buttonQR.setOnClickListener {
-            Log.i("QR Button","Clicked")
-            //requireView().findNavController().navigate(R.id.navigation_QRCode)
-
-        }
-
 
         /*val textView: TextView = root.findViewById(R.id.text_dashboard)
         eventsViewModel.text.observe(viewLifecycleOwner, Observer {

@@ -1,4 +1,4 @@
-package com.example.eventdetails.ui.home
+package com.example.eventdetails.ui.MyEvents
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,23 +10,22 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.eventdetails.R
 
-class HomeFragment : Fragment() {
+class MyEventsFragment : Fragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
+    private lateinit var myEventsViewModel: MyEventsViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
-
     ): View? {
         setHasOptionsMenu(false);
-        homeViewModel =
-                ViewModelProvider(this).get(HomeViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_home, container, false)
-        //val textView: TextView = root.findViewById(R.id.text_home)
-        homeViewModel.text.observe(viewLifecycleOwner, Observer {
-            //textView.text = it
+        myEventsViewModel =
+                ViewModelProvider(this).get(MyEventsViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_myevents, container, false)
+        val textView: TextView = root.findViewById(R.id.text_notifications)
+        myEventsViewModel.text.observe(viewLifecycleOwner, Observer {
+            textView.text = it
         })
         return root
     }

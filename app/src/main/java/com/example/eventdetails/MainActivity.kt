@@ -1,9 +1,6 @@
 package com.example.eventdetails
 
-import android.graphics.Bitmap
-import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment

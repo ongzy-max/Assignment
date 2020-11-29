@@ -19,38 +19,6 @@
             android:padding="10dp">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInput_email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="30"
-                    android:layout_marginTop="20dp"
-                    android:hint="Email Address"
-                    android:inputType="textEmailAddress"
-                    android:id="@+id/email"/>
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInput_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="30"
-                    android:layout_marginTop="20dp"
-                    android:hint="Password"
-                    android:inputType="textPassword"
-                    android:id="@+id/password"/>
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInput_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -59,7 +27,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="30"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="20dp"
                     android:hint="Name"
                     android:inputType="textPersonName"
                     android:id="@+id/name"/>
@@ -83,7 +51,37 @@
             </com.google.android.material.textfield.TextInputLayout>
 
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInput_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="30"
+                    android:layout_marginTop="20dp"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:id="@+id/password"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInput_confirmpassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="30"
+                    android:layout_marginTop="20dp"
+                    android:hint="Confirm Password"
+                    android:inputType="textPassword"
+                    android:id="@+id/confirmpassword"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInput_phone"
@@ -101,16 +99,30 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInput_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="30"
+                    android:layout_marginTop="20dp"
+                    android:hint="Email Address"
+                    android:inputType="textEmailAddress"
+                    android:id="@+id/email"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
 
 
             <Button
                 android:id="@+id/buttonProfileNext"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="140dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="150dp"
                 android:layout_marginTop="32dp"
-                android:layout_marginEnd="140dp"
+                android:layout_marginEnd="150dp"
                 android:text="@string/done" />
 
         </LinearLayout>
