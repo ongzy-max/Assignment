@@ -55,4 +55,6 @@
     <string name="editProfile">Edit Profile</string>
     <string name="signout">Sign out</string>
     <string name="done">Done</string>
+    <string name="signoutQ">Sign out from Selfless?</string>
+    <string name="cancel">Cancel</string>
 </resources>

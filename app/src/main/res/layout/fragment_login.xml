@@ -127,8 +127,8 @@
 
     <ImageView
         android:id="@+id/imageView7"
-        android:layout_width="379dp"
-        android:layout_height="198dp"
+        android:layout_width="306dp"
+        android:layout_height="139dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="20dp"

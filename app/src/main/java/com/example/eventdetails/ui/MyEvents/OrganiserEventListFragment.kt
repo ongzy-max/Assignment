@@ -1,4 +1,4 @@
-package com.android.example.eventactivity.fragments
+package com.example.eventdetails.ui.MyEvents
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,13 +12,7 @@ import com.example.eventdetails.R
 import com.example.eventdetails.ui.Firebase.EventRead
 import com.google.firebase.database.*
 
-class ListFragment : Fragment() {
-
-//    private var titleList = mutableListOf<String>()
-//    private var dateList = mutableListOf<String>()
-//    private var durationList = mutableListOf<String>()
-//    private var locationList = mutableListOf<String>()
-//    private var contactList = mutableListOf<String>()
+class OrganiserEventListFragment : Fragment() {
 
     lateinit var ref: DatabaseReference
     //lateinit var eventList: MutableList<Event>
@@ -72,38 +66,6 @@ class ListFragment : Fragment() {
     }
 
 
-//    private fun addToList(eventTitle: String, eventDate: String, eventDuration: String, eventLocation: String, eventContact: String){
-//        titleList.add(eventTitle)
-//        dateList.add(eventDate)
-//        durationList.add(eventDuration)
-//        locationList.add(eventLocation)
-//        contactList.add(eventContact)
-//    }
-//
-//    private fun postToList(){
-//        for (i in 1..5)
-//            addToList("Title $i", "Date $i", "Duration $i", "Location $i", "Contact $i")
-//    }
-
-
-//        postToList()
-//
-//        val recyclerView: RecyclerView = view.findViewById(R.id.recycleList);
-//        recyclerView.layoutManager = LinearLayoutManager(this.context)
-//        recyclerView.adapter = RecyclerAdapter(titleList, dateList, durationList, locationList, contactList)
-
-//        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
-//        layoutManager.setOrientation(LinearLayoutManager.VERTICAL
-//                recyclerview.setLayoutManager(layoutManager);
-//        recyclerview.setHasFixedSize(true);
-//        recyclerviewAdapter adapter = new recyclerviewAdapterAdapter(listdata,getActivity());
-//        recyclerview.setAdapter(adapter);
-
-//        val recyclerView: RecyclerView = view.findViewById(R.id.recycleList);
-//        recyclerView.setHasFixedSize(true);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-//        //recyclerView.setAdapter(new RandomNumListAdapter(1234));
-//        recyclerView.adapter = RecyclerAdapter(titleList, dateList, durationList, locationList, contactList)
 
 
 }
