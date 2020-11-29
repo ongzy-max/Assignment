@@ -13,7 +13,6 @@ import com.example.eventdetails.R
 class ForgotPWFragment : Fragment() {
 
     private lateinit var forgotPWViewModel: ForgotPWViewModel
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -23,9 +22,7 @@ class ForgotPWFragment : Fragment() {
         forgotPWViewModel =
             ViewModelProvider(this).get(ForgotPWViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_forgotpw, container, false)
-        //loginViewModel.text.observe(viewLifecycleOwner, Observer {
-        //    textView.text = it
-        //})
+
         return root
     }
 }
